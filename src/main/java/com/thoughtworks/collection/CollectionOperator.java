@@ -25,7 +25,7 @@ public class CollectionOperator {
     }
 
     public List<Integer> popEvenElments(int[] array) {
-        throw new NotImplementedException();
+        return IntStream.of(array).boxed().filter(i -> i % 2 == 0).collect(Collectors.toList());
     }
 
     public int popLastElment(int[] array) {
