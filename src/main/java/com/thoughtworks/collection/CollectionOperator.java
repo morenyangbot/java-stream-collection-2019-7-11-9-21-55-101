@@ -29,7 +29,8 @@ public class CollectionOperator {
     }
 
     public int popLastElment(int[] array) {
-        throw new NotImplementedException();
+        List<Integer> integers = IntStream.of(array).boxed().collect(Collectors.toList());
+        return integers.get(integers.size() - 1);
     }
 
     public List<Integer> popCommonElement(int[] firstArray, int[] secondArray) {
