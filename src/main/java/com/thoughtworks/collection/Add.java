@@ -2,11 +2,18 @@ package com.thoughtworks.collection;
 
 import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Add {
     public int getSumOfEvens(int leftBorder, int rightBorder) {
-        throw new NotImplementedException();
+        int start = leftBorder < rightBorder ? leftBorder : rightBorder;
+        int end = leftBorder != start ? leftBorder : rightBorder;
+        List<Integer> list = new ArrayList<>();
+        for (int i = start; i <= end; i++) {
+            list.add(i);
+        }
+        return list.stream().filter(integer -> integer % 2 == 0).mapToInt(i -> i).sum();
     }
 
     public int getSumOfOdds(int leftBorder, int rightBorder) {
